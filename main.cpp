@@ -42,13 +42,9 @@ const char *sec2str(nsapi_security_t sec)
 void scan_demo(WiFiInterface *wifi)
 {
     WiFiAccessPoint *ap;
+    int count = 15;    /* Limit number of network arbitrary to 15 */
 
     printf("Scan:\r\n");
-
-    int count = wifi->scan(NULL,0);
-
-    /* Limit number of network arbitrary to 15 */
-    count = count < 15 ? count : 15;
 
     ap = new WiFiAccessPoint[count];
     count = wifi->scan(ap, count);
