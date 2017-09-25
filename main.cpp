@@ -18,7 +18,7 @@
 #include "TCPSocket.h"
 
 #include "ESP32Interface.h"
-ESP32Interface wifi(P5_3, P3_14, P3_15, P0_2);
+ESP32Interface wifi(P5_3, P3_14, P3_15, P0_1);
 
 const char *sec2str(nsapi_security_t sec)
 {
