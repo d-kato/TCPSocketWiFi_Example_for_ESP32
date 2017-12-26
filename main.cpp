@@ -18,7 +18,13 @@
 #include "TCPSocket.h"
 
 #include "ESP32Interface.h"
+#if defined(TARGET_RZ_A1H)
+ESP32Interface wifi(P3_10, P3_9, P2_14, P2_15);
+#elif defined(TARGET_GR_LYCHEE)
 ESP32Interface wifi(P5_3, P3_14, P7_1, P0_1);
+#else
+#error "Not supported target."
+#endif
 
 const char *sec2str(nsapi_security_t sec)
 {
